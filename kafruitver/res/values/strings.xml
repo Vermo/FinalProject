@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">kafruitver</string>
+    <string name="fruit">Frutas</string>
+    <string name="vegetable">Verduras</string>
+    <string name="other">Complementos</string>
+    <string name="buy">Listado de Compra</string>
+    <string name="menu_buscar">Buscar</string>
+    <string name="menu_carro">Añadir a cesta</string>
+
+</resources>

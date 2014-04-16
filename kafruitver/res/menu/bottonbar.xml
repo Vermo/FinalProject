@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" 
+    xmlns:com.example.kafruitver="http://schemas.android.com/apk/res-auto" >
+    
+    <item
+        android:id="@+id/icono_search"
+        android:title="@string/menu_buscar"
+        android:icon="@drawable/ic_action_search"
+    	com.example.kafruitver:showAsAction="ifRoom|withText"/>
+    
+    <item
+        android:id="@+id/icono_carro"
+        android:title="@string/menu_carro"
+		android:icon="@drawable/ic_action_shop"
+		com.example.kafruitver:showAsAction="ifRoom|withText"/>
+    
+    <!-- los iconos de ic_action_shop y ic_action_shop1 en drawable mdpi y xhdpi 
+    no son los correctos hay q cambiarlos a la correcta resolucion, son una copia de drawable hdpi -->
+    
+</menu>
