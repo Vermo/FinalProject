@@ -9,9 +9,6 @@ import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBar.Tab;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.Toast;
 
 public class TabsSwipe extends ActionBarActivity implements ActionBar.TabListener, OnPageChangeListener {
 
@@ -60,13 +57,13 @@ private ViewPager mViewPager;;
 		public Fragment getItem(int arg0) {
 			switch (arg0) {
 	            case 0:
-	                return new Fragment_Fruit();
+	                return new FragmentFruit();
 	            case 1:
-	                return new Fragment_Vegetable();
+	                return new FragmentVegetable();
 	            case 2:
-	                return new Fragment_Other();
+	                return new FragmentOther();
 	            case 3:
-	            	return new Fragment_Buy();
+	            	return new FragmentListBuy();
 	            default:
 	            	return null;
 			}
@@ -75,7 +72,6 @@ private ViewPager mViewPager;;
 		public int getCount() {
 			return 4;
 		}
-
     }
 
 	/** INTERFACE ONPAGECHANGELISTENER **/
@@ -89,7 +85,6 @@ private ViewPager mViewPager;;
 	public void onPageScrolled(int arg0, float arg1, int arg2) {
 	}
 	
-	
 	/** INTERFACE ACTIONBAR.TABLISTENER **/
 	public void onTabSelected(Tab arg0, FragmentTransaction arg1) {
 		mViewPager.setCurrentItem(arg0.getPosition());
@@ -101,10 +96,8 @@ private ViewPager mViewPager;;
 	public void onTabUnselected(Tab arg0, FragmentTransaction arg1) {
 	}
 		
-
-
 	/** INTERFACE ACTIONBAR INFERIOR **/
-	public boolean onCreateOptionsMenu(Menu menu) {
+	/*public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.bottonbar, menu);
 		return super.onCreateOptionsMenu(menu);
 	}
@@ -120,6 +113,6 @@ private ViewPager mViewPager;;
         	default:
         		return super.onOptionsItemSelected(item);
 		}
-	}
+	}*/
 
 }

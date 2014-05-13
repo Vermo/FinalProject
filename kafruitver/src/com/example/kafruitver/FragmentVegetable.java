@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
-public class Fragment_Fruit extends Fragment {
+public class FragmentVegetable extends Fragment {
 	
 	MyApp mApp;
 	
@@ -27,14 +27,13 @@ public class Fragment_Fruit extends Fragment {
 		View mV = inflater.inflate(R.layout.expandible_main, container, false);
 		ExpandableAdapter mAdapter = mApp.getAdapter();
 		ExpandableListView mViewExpandable = mApp.getListView();
-		ArrayList<String> mHeadersFruits = mApp.getHeadersFruits();
-		HashMap<String, List<String>> mChildsFruits = mApp.getChildsFruits();
+		ArrayList<String> mHeadersVegetables = mApp.getHeadersVegetables();
+		HashMap<String, List<String>> mChildsVegetables = mApp.getChildsVegetables();
 		mViewExpandable = (ExpandableListView) mV.findViewById(R.id.expandableList);
-		mAdapter = new ExpandableAdapter(getActivity(), mHeadersFruits, mChildsFruits);
+		mAdapter = new ExpandableAdapter(getActivity(), mHeadersVegetables, mChildsVegetables);
 		mViewExpandable.setAdapter(mAdapter);
 		
 		return mV;
 	}
-	
 	
 }

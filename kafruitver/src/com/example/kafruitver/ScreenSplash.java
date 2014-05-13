@@ -10,7 +10,7 @@ import com.example.kafruitver.R;
 
 public class ScreenSplash extends Activity {
 
-	private long mDelay = 3000; //3 segundos
+	private long mDelay = 1000; //1 segundos
 	 
 	  @Override
 	  protected void onCreate(Bundle savedInstanceState) {

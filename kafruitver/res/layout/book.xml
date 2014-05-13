@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/titleselectstore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SELECCIONA LA TIENDA DONDE REALIZAS EL PEDIDO" />
+
+    <Button
+        android:id="@+id/selecStore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seleccione Tienda" />
+
+    <TextView
+        android:id="@+id/tittleselecttimehour"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SELECCIONE LA FECHA Y LA HORA DE RECOGIDA:" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:id="@+id/tabledate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tittleselectdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha:" />
+
+            <TextView
+                android:id="@+id/selectdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10/05/14" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tablehour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tittleselecthour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hora:" />
+
+            <TextView
+                android:id="@+id/selecthour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9:00" />
+
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/bookbuy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Realizar Reserva" />
+
+</LinearLayout>

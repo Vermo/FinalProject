@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class Fragment_Other extends Fragment {
+public class FragmentOther extends Fragment {
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {

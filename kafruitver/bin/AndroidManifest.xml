@@ -33,6 +33,7 @@
                 android:name="android.support.UI_OPTIONS"
                 android:value="splitActionBarWhenNarrow"/>
          </activity>
+         <activity android:name="Book"></activity>
     </application>
 
 </manifest>
