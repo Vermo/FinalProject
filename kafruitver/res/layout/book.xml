@@ -10,11 +10,11 @@
         android:layout_height="wrap_content"
         android:text="SELECCIONA LA TIENDA DONDE REALIZAS EL PEDIDO" />
 
-    <Button
-        android:id="@+id/selecStore"
+    <TextView
+        android:id="@+id/selectstore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Seleccione Tienda" />
+        android:text="Seleccione la Tienda" />
 
     <TextView
         android:id="@+id/tittleselecttimehour"
@@ -41,7 +41,7 @@
                 android:id="@+id/selectdate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10/05/14" />
+                android:text="DD/MM/YY" />
         </TableRow>
 
         <TableRow
@@ -59,7 +59,7 @@
                 android:id="@+id/selecthour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="9:00" />
+                android:text="HH:MM" />
 
         </TableRow>
     </TableLayout>

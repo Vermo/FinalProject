@@ -7,8 +7,7 @@ import java.util.List;
 import android.app.Application;
 import android.widget.ExpandableListView;
 
-
-public class MyApp extends Application {
+public class MyApp extends Application{
 	
 	ExpandableAdapter mAdapter;
 	ExpandableListView mViewExpandable;
@@ -19,7 +18,7 @@ public class MyApp extends Application {
 	static HashMap<String, List<String>> mChildsVegetables = new HashMap<String, List<String>>();
 	static HashMap<String, List<String>> mChildsOthers = new HashMap<String, List<String>>();
 	
-	static {
+	static{
 
 		/**----------------------FRUTAS-------------------**/
 		mHeadersFruits.add("Aguacates");
@@ -326,36 +325,12 @@ public class MyApp extends Application {
 	}	
 
 	/**-----------------SETTERS & GETTERS-----------------------**/
-	ExpandableAdapter getAdapter(){
-		return mAdapter;
-	}
-	
-	ExpandableListView getListView(){
-		return mViewExpandable;
-	}
-	
-	ArrayList<String> getHeadersFruits(){
-		return (ArrayList<String>) mHeadersFruits;
-	}
-	
-	ArrayList<String> getHeadersVegetables(){
-		return (ArrayList<String>) mHeadersVegetables;
-	}
-	
-	ArrayList<String> getHeadersOthers(){
-		return (ArrayList<String>) mHeadersOthers;
-	}
-	
-	HashMap<String, List<String>> getChildsFruits(){
-		return mChildsFruits;
-	}
-
-	HashMap<String, List<String>> getChildsVegetables(){
-		return mChildsVegetables;
-	}
-	
-	HashMap<String, List<String>> getChildsOthers(){
-		return mChildsOthers;
-	}
-	
+	ExpandableAdapter getAdapter(){return mAdapter;}
+	ExpandableListView getListView(){return mViewExpandable;}
+	ArrayList<String> getHeadersFruits(){return (ArrayList<String>) mHeadersFruits;}
+	ArrayList<String> getHeadersVegetables(){return (ArrayList<String>) mHeadersVegetables;}
+	ArrayList<String> getHeadersOthers(){return (ArrayList<String>) mHeadersOthers;}
+	HashMap<String, List<String>> getChildsFruits(){return mChildsFruits;}
+	HashMap<String, List<String>> getChildsVegetables(){return mChildsVegetables;}
+	HashMap<String, List<String>> getChildsOthers(){return mChildsOthers;}
 }

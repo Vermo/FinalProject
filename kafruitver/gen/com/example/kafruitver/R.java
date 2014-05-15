@@ -1034,9 +1034,9 @@ containing a value of this type.
         public static final int search_plate=0x7f050036;
         public static final int search_src_text=0x7f050037;
         public static final int search_voice_btn=0x7f05003b;
-        public static final int selecStore=0x7f05003d;
         public static final int selectdate=0x7f050041;
         public static final int selecthour=0x7f050044;
+        public static final int selectstore=0x7f05003d;
         public static final int shortcut=0x7f05002e;
         public static final int showCustom=0x7f050007;
         public static final int showHome=0x7f050004;
@@ -1168,6 +1168,7 @@ containing a value of this type.
         public static final int menu_buscar=0x7f0a0012;
         public static final int menu_carro=0x7f0a0013;
         public static final int other=0x7f0a0010;
+        public static final int tittle=0x7f0a0014;
         public static final int vegetable=0x7f0a000f;
     }
     public static final class style {

@@ -7,5 +7,6 @@
     <string name="buy">Listado de Compra</string>
     <string name="menu_buscar">Buscar</string>
     <string name="menu_carro">Añadir a cesta</string>
+    <string name="tittle">Elige una tienda donde realizar tu pedido</string>
 
 </resources>

@@ -284,9 +284,9 @@ int id search_mag_icon 0x7f050035
 int id search_plate 0x7f050036
 int id search_src_text 0x7f050037
 int id search_voice_btn 0x7f05003b
-int id selecStore 0x7f05003d
 int id selectdate 0x7f050041
 int id selecthour 0x7f050044
+int id selectstore 0x7f05003d
 int id shortcut 0x7f05002e
 int id showCustom 0x7f050007
 int id showHome 0x7f050004
@@ -361,6 +361,7 @@ int string fruit 0x7f0a000e
 int string menu_buscar 0x7f0a0012
 int string menu_carro 0x7f0a0013
 int string other 0x7f0a0010
+int string tittle 0x7f0a0014
 int string vegetable 0x7f0a000f
 int style AppBaseTheme 0x7f0b0083
 int style AppTheme 0x7f0b0084
