@@ -19,7 +19,7 @@ public class FinishBookAlertDialog extends DialogFragment{
 	@Override
 	public void onAttach(Activity activity){
 		super.onAttach(activity);
-		mFinishBookAlertDialogListener = (FinishBookAlertDialogListener) getTargetFragment();		
+		mFinishBookAlertDialogListener = (FinishBookAlertDialogListener) getActivity();		
 	}
 	
 	@Override
@@ -33,12 +33,10 @@ public class FinishBookAlertDialog extends DialogFragment{
         
         builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener(){
             @Override
-            public void onClick(DialogInterface dialog, int id){
-            	mFinishBookAlertDialogListener.doAcceptFinish();
-            }
+            public void onClick(DialogInterface dialog, int id){mFinishBookAlertDialogListener.doAcceptFinish();}
         });
  
-        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener(){
             @Override
             public void onClick(DialogInterface dialog, int id){dismiss();}
         });

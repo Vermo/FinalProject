@@ -14,7 +14,7 @@ public class TabsSwipeActionBar extends ActionBarActivity implements ActionBar.T
 
 private ViewPager mViewPager;;
 	
-	protected void onCreate(Bundle arg0) {
+	protected void onCreate(Bundle arg0){
 		super.onCreate(arg0);
 		setContentView(R.layout.tabs);
 		
@@ -40,7 +40,7 @@ private ViewPager mViewPager;;
 		actionBar.addTab(tab);
 		
 		/**MOSTRAR BOTON ATRAS EN ACTION BAR**/
-		actionBar.setDisplayHomeAsUpEnabled(true);
+		//actionBar.setDisplayHomeAsUpEnabled(true);
 	}
 
 	public void onBackPressed() {
@@ -50,12 +50,10 @@ private ViewPager mViewPager;;
 		
 	public class PagerAdapter extends FragmentPagerAdapter {
 
-		public PagerAdapter(FragmentManager fm) {
-			super(fm);
-		}
+		public PagerAdapter(FragmentManager fm){super(fm);}
 
-		public Fragment getItem(int arg0) {
-			switch (arg0) {
+		public Fragment getItem(int arg0){
+			switch (arg0){
 	            case 0:
 	                return new FruitFragment();
 	            case 1:
@@ -69,32 +67,22 @@ private ViewPager mViewPager;;
 			}
 		}
 
-		public int getCount() {
-			return 4;
-		}
+		public int getCount(){return 4;}
     }
 
 	/** INTERFACE ONPAGECHANGELISTENER **/
-	public void onPageSelected(int arg0) {
-		getSupportActionBar().setSelectedNavigationItem(arg0);
-	}
+	public void onPageSelected(int arg0){getSupportActionBar().setSelectedNavigationItem(arg0);}
 	
-	public void onPageScrollStateChanged(int arg0) {
-	}
+	public void onPageScrollStateChanged(int arg0){}
 	
-	public void onPageScrolled(int arg0, float arg1, int arg2) {
-	}
+	public void onPageScrolled(int arg0, float arg1, int arg2){}
 	
 	/** INTERFACE ACTIONBAR.TABLISTENER **/
-	public void onTabSelected(Tab arg0, FragmentTransaction arg1) {
-		mViewPager.setCurrentItem(arg0.getPosition());
-	}
+	public void onTabSelected(Tab arg0, FragmentTransaction arg1){mViewPager.setCurrentItem(arg0.getPosition());}
 	
-	public void onTabReselected(Tab arg0, FragmentTransaction arg1) {	
-	}
+	public void onTabReselected(Tab arg0, FragmentTransaction arg1){}
 	
-	public void onTabUnselected(Tab arg0, FragmentTransaction arg1) {
-	}
+	public void onTabUnselected(Tab arg0, FragmentTransaction arg1){}
 		
 	/** INTERFACE ACTIONBAR INFERIOR **/
 	/*public boolean onCreateOptionsMenu(Menu menu) {

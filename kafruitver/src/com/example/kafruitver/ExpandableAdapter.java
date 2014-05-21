@@ -5,20 +5,22 @@ import java.util.List;
 
 import android.app.Activity;
 import android.graphics.Typeface;
+import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ExpandableAdapter extends BaseExpandableListAdapter{
-	// atallitemenable funciones para seleccion del elemento lista
-	// isenable
+	DialogFragment mAddNumberDialogFragment = new AddNumberDialogFragment();
 	private final Activity context;
 	private final List<String> mHeaders;
 	private final HashMap<String, List<String>> mChilds;
+	private OnCheckedChangeListener mListener;
 	
 	public ExpandableAdapter(Activity context, List<String> mHeaders, HashMap<String, List<String>> mChilds){
 		this.context = context;
@@ -32,20 +34,22 @@ public class ExpandableAdapter extends BaseExpandableListAdapter{
 		CheckBox check;
 	}
 
+	public void onSetCheckedChangeListenerImp(OnCheckedChangeListener l){mListener=l;}
+	
 	//------ IMPLEMENTACION HIJOS------------------------------
 	@Override
-	public Object getChild(int groupPosition, int childPosition) {
+	public Object getChild(int groupPosition, int childPosition){
 		return this.mChilds.get(this.mHeaders.get(groupPosition)).get(childPosition);
 	}
-
+	
 	@Override
-	public long getChildId(int groupPosition, int childPosition) {
-		return childPosition;
-	}
-
+	public boolean areAllItemsEnabled(){return false;}
+	
 	@Override
-	public View getChildView(int groupPosition, int childPosition,
-			boolean isLastChild, View convertView, ViewGroup parent) {
+	public long getChildId(int groupPosition, int childPosition){return childPosition;}
+	
+	@Override
+	public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent){
 		final String mChildtext = (String) getChild(groupPosition, childPosition);
 		ViewHolder mHolderChild = new ViewHolder(); 
 		
@@ -55,41 +59,30 @@ public class ExpandableAdapter extends BaseExpandableListAdapter{
 			mHolderChild.image = (ImageView) convertView.findViewById(R.id.image);
 			mHolderChild.text = (TextView) convertView.findViewById(R.id.tipofruta);
 			mHolderChild.check = (CheckBox) convertView.findViewById(R.id.click);
-			convertView.setTag(mHolderChild);
-			
+			convertView.setTag(mHolderChild);	
 		}
-		
 		mHolderChild = (ViewHolder) convertView.getTag();
 		mHolderChild.image.setImageResource(R.drawable.ic_launcher);
-		mHolderChild.text.setText(mChildtext); 
-
+		mHolderChild.text.setText(mChildtext);
+		mHolderChild.check.setOnCheckedChangeListener(mListener);
 		return convertView;
 	}
 
 	@Override
-	public int getChildrenCount(int groupPosition) {
-		return mChilds.get(this.mHeaders.get(groupPosition)).size();
-	}
+	public int getChildrenCount(int groupPosition){return mChilds.get(this.mHeaders.get(groupPosition)).size();}
 	
 	//------ IMPLEMENTACION CABECERAS------------------------------
 	@Override
-	public Object getGroup(int groupPosition) {
-		return mHeaders.get(groupPosition);
-	}
+	public Object getGroup(int groupPosition){return mHeaders.get(groupPosition);}
 
 	@Override
-	public int getGroupCount() {
-		return mHeaders.size();
-	}
+	public int getGroupCount(){return mHeaders.size();}
 
 	@Override
-	public long getGroupId(int groupPosition) {
-		return groupPosition;
-	}
+	public long getGroupId(int groupPosition){return groupPosition;}
 
 	@Override
-	public View getGroupView(int groupPosition, boolean isExpanded,
-			View convertView, ViewGroup parent) {
+	public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent){
 		final String mParenttext = (String) getGroup(groupPosition);
 		ViewHolder mHolderParent = new ViewHolder();
 		
@@ -107,26 +100,20 @@ public class ExpandableAdapter extends BaseExpandableListAdapter{
 		mHolderParent.text.setText(mParenttext);
 		mHolderParent.text.setTypeface(null, Typeface.BOLD_ITALIC);
 		
-		if(this.getChildrenCount(groupPosition) != 0){
-			mHolderParent.image.setVisibility(View.GONE);
-			mHolderParent.check.setVisibility(View.GONE);
-			//mHolderParent.check.setClickable(false);
-		}else{
-			mHolderParent.check.setVisibility(View.VISIBLE);
+		if(this.getChildrenCount(groupPosition) == 0){
 			mHolderParent.image.setVisibility(View.VISIBLE);
+			mHolderParent.check.setVisibility(View.VISIBLE);
+			mHolderParent.check.setOnCheckedChangeListener(mListener);
+		}else{
+			mHolderParent.check.setVisibility(View.GONE);
+			mHolderParent.image.setVisibility(View.GONE);
 		}
-			
 		return convertView;
 	}
 	
 	@Override
-	public boolean hasStableIds() {
-		return false;
-	}
+	public boolean hasStableIds(){return false;}
 
 	@Override
-	public boolean isChildSelectable(int groupPosition, int childPosition) {
-		return true;
-	}
-		
+	public boolean isChildSelectable(int groupPosition, int childPosition){return true;}
 }

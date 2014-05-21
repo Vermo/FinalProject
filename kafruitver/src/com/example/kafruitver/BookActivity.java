@@ -22,13 +22,15 @@ public class BookActivity extends FragmentActivity implements TimePickerFragment
 	DialogFragment mFinishDialogFragment = new FinishBookAlertDialog();
 	TextView datetextview, timetextview, selectstoretextview;
 	Button bookListbutton;
+	android.app.ActionBar actionBar;
 	int count = 0;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.book);
-	    
+	    actionBar = getActionBar();
+	    actionBar.setDisplayHomeAsUpEnabled(true);   
 	    datetextview = (TextView) findViewById(R.id.selectdate);
 	    timetextview = (TextView) findViewById(R.id.selecthour);
 	    selectstoretextview = (TextView) findViewById(R.id.selectstore);
@@ -51,9 +53,10 @@ public class BookActivity extends FragmentActivity implements TimePickerFragment
 	    
 	    bookListbutton.setOnClickListener(new OnClickListener(){
 			@Override
-			public void onClick(View v){mFinishDialogFragment.show(getSupportFragmentManager(), "FinishBook");}
+			public void onClick(View v){
+				mFinishDialogFragment.show(getSupportFragmentManager(), "FinishBook");
+			}
 		});
-	    
 	}
 		 
 	/*METODO DEL DIALOG DATE -- ESTABLECER FECHA DEL PEDIDO A RECOGER*/
